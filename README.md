@@ -9,3 +9,6 @@ I figured out a while ago that GMod uses a customized version of Lua.
 
 **Heaven.** 
 All GMod addons I make and put on the Workshop will be here as I heavily believe in open-source.
+
+### License
+All addons here are licensed under the [MIT](https://github.com/plusreed/gmod-addons/LICENSE) by default unless specified otherwise.
