@@ -18,6 +18,11 @@ function simpleadmin.isOwner(ply)
 end
 
 function simpleadmin.findByNick(nickname)
+    -- get rid of quotes if present.
+    if nickname:sub(1, 1) == "\"" and nickname:sub(-1) == "\"" then
+        nickname = nickname:sub(2, -2)
+    end
+
     for _, v in pairs(player.GetAll()) do
         if v:Nick() == nickname then
             return v
@@ -136,8 +141,10 @@ simpleadmin.commands.god = simpleadmin.Command.new("god", simpleadmin.Permission
     -- set god mode
     if arg[1] == "on" then
         target:GodEnable()
+        ply:ChatPrint("God mode enabled for " .. target:Nick() .. "!")
     elseif arg[1] == "off" then
         target:GodDisable()
+        ply:ChatPrint("God mode disabled for " .. target:Nick() .. "!")
     else
         ply:ChatPrint("Invalid argument!")
     end
